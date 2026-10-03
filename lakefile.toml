@@ -1,0 +1,10 @@
+name = "LaxCore"
+defaultTargets = ["LaxCore"]
+
+[[lean_lib]]
+name = "LaxCore"
+# The examples are roots of the one library so that `lake build` compiles
+# them: Negative.lean is `#guard_msgs`-checked, so the build proves the
+# attribute's messages. A dependent that imports `LaxCore` builds only that
+# module.
+roots = ["LaxCore", "Examples.Positive", "Examples.Negative"]
